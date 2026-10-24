@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://nj5shg4p4jy6"]
+
+[ext_resource type="Script" uid="uid://bdwj87quf5tyk" path="res://objects/pickups/pickup_door.gd" id="1_3ljb8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w81ou"]
+size = Vector2(4, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w81ou"]
+size = Vector2(8, 52)
+
+[node name="KeyDoor" type="StaticBody2D" unique_id=1005358272]
+collision_mask = 7
+
+[node name="DoorArea" type="Area2D" parent="." unique_id=2014173593 node_paths=PackedStringArray("item_sprite", "collider")]
+collision_mask = 7
+script = ExtResource("1_3ljb8")
+needed_item_name = "key"
+item_sprite = NodePath("Sprite2D")
+collider = NodePath("../DoorCollision")
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorArea" unique_id=1140375307]
+texture = SubResource("PlaceholderTexture2D_w81ou")
+
+[node name="InteractArea" type="CollisionShape2D" parent="DoorArea" unique_id=1455215298]
+shape = SubResource("RectangleShape2D_w81ou")
+
+[node name="DoorCollision" type="CollisionShape2D" parent="." unique_id=249148912]
+shape = SubResource("RectangleShape2D_w81ou")
+
+[connection signal="body_entered" from="DoorArea" to="DoorArea" method="_on_body_entered"]

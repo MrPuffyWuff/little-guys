@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bodk6tsvqy6r8" path="res://player/top.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://c2ebvyltgi4a6" path="res://objects/box/box.tscn" id="4_c651c"]
 [ext_resource type="PackedScene" uid="uid://bqc5lxw7k0od1" path="res://objects/pickups/key/key.tscn" id="5_3wy1v"]
+[ext_resource type="PackedScene" uid="uid://nj5shg4p4jy6" path="res://objects/pickups/key_door/key_door.tscn" id="6_kfbq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
 texture = ExtResource("1_53q0u")
@@ -86,3 +87,6 @@ position = Vector2(65, -26)
 
 [node name="Key" parent="." unique_id=1090568882 instance=ExtResource("5_3wy1v")]
 position = Vector2(78, -109)
+
+[node name="KeyDoor" parent="." unique_id=1152561114 instance=ExtResource("6_kfbq2")]
+position = Vector2(118, -24)
