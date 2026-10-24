@@ -24,7 +24,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if GameState.cur_player != self:
 		return
 	
-	print(self.name)
+	#print(self.name)
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept"):

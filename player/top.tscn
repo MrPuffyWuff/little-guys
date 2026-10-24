@@ -3,6 +3,8 @@
 [ext_resource type="PhysicsMaterial" uid="uid://u46yrovq5xet" path="res://player/player_physics_mat.tres" id="1_3fbq4"]
 [ext_resource type="Script" uid="uid://cdjybkaqdeq1j" path="res://player/player.gd" id="1_h2khc"]
 [ext_resource type="Texture2D" uid="uid://hh5o8asnuqa4" path="res://icon.svg" id="1_oc280"]
+[ext_resource type="Script" uid="uid://cw7hp0dpjaxtq" path="res://player/arm.gd" id="4_0pyhn"]
+[ext_resource type="Script" uid="uid://3unxpanbmvd6" path="res://player/hand.gd" id="5_pg0a4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
 radius = 5.0
@@ -10,6 +12,9 @@ height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55d6i"]
 size = Vector2(16, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bva4"]
+size = Vector2(6, 6)
 
 [node name="Top" type="RigidBody2D" unique_id=667853855]
 collision_layer = 2
@@ -19,7 +24,7 @@ contact_monitor = true
 max_contacts_reported = 50
 script = ExtResource("1_h2khc")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1998052067]
+[node name="Body" type="Sprite2D" parent="." unique_id=1998052067]
 texture = ExtResource("1_oc280")
 region_enabled = true
 region_rect = Rect2(48, 48, 16, 16)
@@ -34,3 +39,22 @@ position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_55d6i")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=320501897]
+zoom = Vector2(3, 3)
+
+[node name="Arm" type="Line2D" parent="." unique_id=1536909679]
+points = PackedVector2Array(0, 0, 15, 10, 30, 0)
+width = 4.0
+script = ExtResource("4_0pyhn")
+
+[node name="Hand" type="RigidBody2D" parent="." unique_id=2121887103]
+position = Vector2(29, 0)
+collision_layer = 4
+script = ExtResource("5_pg0a4")
+
+[node name="HandSprite" type="Sprite2D" parent="Hand" unique_id=1973262451]
+texture = ExtResource("1_oc280")
+region_enabled = true
+region_rect = Rect2(85, 68, 6, 5.990814)
+
+[node name="HandCollisionShape" type="CollisionShape2D" parent="Hand" unique_id=1375967998]
+shape = SubResource("RectangleShape2D_7bva4")
