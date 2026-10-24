@@ -21,8 +21,8 @@ max_contacts_reported = 50
 script = ExtResource("1_rkbax")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1273366091]
-position = Vector2(0, -8)
 texture = ExtResource("3_6vaud")
+offset = Vector2(0, -8)
 region_rect = Rect2(16, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778501678]
