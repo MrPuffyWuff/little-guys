@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dy1yfa0qaa1l4"]
+
+[ext_resource type="Script" uid="uid://bejytegrmq87" path="res://player/arm/arm.gd" id="1_li02e"]
+
+[sub_resource type="Gradient" id="Gradient_1catv"]
+offsets = PackedFloat32Array(0, 0.95842093)
+colors = PackedColorArray(0, 0, 0, 1, 0.62, 0.018599983, 0.018599983, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_55d6i"]
+gradient = SubResource("Gradient_1catv")
+width = 4
+height = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_55d6i"]
+radius = 2.0
+
+[node name="Arm" type="RigidBody2D" unique_id=730618851]
+collision_layer = 4
+gravity_scale = 0.0
+script = ExtResource("1_li02e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1637164387]
+texture = SubResource("GradientTexture2D_55d6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=157792921]
+shape = SubResource("CircleShape2D_55d6i")

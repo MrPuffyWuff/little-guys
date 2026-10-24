@@ -2,9 +2,13 @@ extends RigidBody2D
 
 class_name Player
 
-const SPEED = 50.0
-const JUMP_STRENGTH = 500.0 * 75
+const SPEED = 75.0
+const JUMP_STRENGTH = 400.0 * 75
 
+
+func _ready() -> void:
+	#await get_tree().process_frame
+	GameState.new_top_node.connect(_on_new_top_node)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
@@ -33,4 +37,11 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	else:
 		linear_velocity.x = move_toward(linear_velocity.x, 0, SPEED)
 	#print(linear_velocity.x)
-	
+
+func _on_new_top_node():
+	if GameState.top_player == GameState.player_a:
+		$Body.rotation = 0
+		$Body.position = Vector2(0,-8)
+	else:
+		$Body.rotation = PI
+		$Body.position = Vector2(0,8)

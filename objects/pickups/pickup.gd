@@ -9,7 +9,7 @@ extends Area2D
 
 # Add item to the GameState once the player interacts with the npc
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player or (hand_can_pickup and body.get_parent() is Player):
+	if body is Player or body is Arm:
 		GameState.current_items.append(item_name)
 		set_deferred("monitoring", false)
 		

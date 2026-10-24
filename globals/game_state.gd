@@ -1,10 +1,11 @@
 extends Node
 
-var cur_player : Player = null
 var current_items: Array[String] = []
 signal new_top_node
 
+##Default Top
 var player_a : Player
+##Default Bot
 var player_b : Player
 
 var top_player : Player = null

@@ -2,7 +2,7 @@
 
 [ext_resource type="PhysicsMaterial" uid="uid://u46yrovq5xet" path="res://player/player_physics_mat.tres" id="1_3fbq4"]
 [ext_resource type="Script" uid="uid://cdjybkaqdeq1j" path="res://player/player.gd" id="1_h2khc"]
-[ext_resource type="Texture2D" uid="uid://hh5o8asnuqa4" path="res://icon.svg" id="1_oc280"]
+[ext_resource type="Texture2D" uid="uid://bt0hxglob0hi2" path="res://assets/programmer_art/little guy protag-1.png.png" id="3_3fbq4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
 radius = 5.0
@@ -20,8 +20,8 @@ max_contacts_reported = 50
 script = ExtResource("1_h2khc")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1998052067]
-texture = ExtResource("1_oc280")
-region_enabled = true
+position = Vector2(0, -8)
+texture = ExtResource("3_3fbq4")
 region_rect = Rect2(48, 48, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=187978786]

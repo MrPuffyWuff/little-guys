@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2ebvyltgi4a6" path="res://objects/box/box.tscn" id="4_c651c"]
 [ext_resource type="PackedScene" uid="uid://bqc5lxw7k0od1" path="res://objects/pickups/key/key.tscn" id="5_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://nj5shg4p4jy6" path="res://objects/pickups/key_door/key_door.tscn" id="6_kfbq2"]
+[ext_resource type="PackedScene" uid="uid://dy1yfa0qaa1l4" path="res://player/arm/arm.tscn" id="8_67ri8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
 texture = ExtResource("1_53q0u")
@@ -71,24 +72,30 @@ position = Vector2(20, -24)
 [node name="Bottom" parent="." unique_id=2082679845 instance=ExtResource("2_pjrb6")]
 position = Vector2(20, -8)
 
-[node name="DampedSpringJoint2D" type="PinJoint2D" parent="." unique_id=1738142872]
+[node name="PlayerJoint" type="PinJoint2D" parent="." unique_id=1738142872]
 position = Vector2(20, -16)
 node_a = NodePath("../Top")
 node_b = NodePath("../Bottom")
 bias = 0.9
 disable_collision = false
 
-[node name="Box" parent="." unique_id=1843571400 instance=ExtResource("4_c651c")]
-position = Vector2(56, -9)
-
-[node name="Box2" parent="." unique_id=2101576773 instance=ExtResource("4_c651c")]
-position = Vector2(74, -9)
-
-[node name="Box3" parent="." unique_id=1907739207 instance=ExtResource("4_c651c")]
-position = Vector2(65, -26)
-
 [node name="Key" parent="." unique_id=1090568882 instance=ExtResource("5_3wy1v")]
 position = Vector2(78, -109)
 
 [node name="KeyDoor" parent="." unique_id=1152561114 instance=ExtResource("6_kfbq2")]
 position = Vector2(118, -24)
+
+[node name="Arm" parent="." unique_id=730618851 node_paths=PackedStringArray("anchor") instance=ExtResource("8_67ri8")]
+position = Vector2(20, -38)
+anchor = NodePath("../Top")
+
+[node name="Objects" type="Node2D" parent="." unique_id=948879472]
+
+[node name="Box" parent="Objects" unique_id=1843571400 instance=ExtResource("4_c651c")]
+position = Vector2(56, -9)
+
+[node name="Box2" parent="Objects" unique_id=2101576773 instance=ExtResource("4_c651c")]
+position = Vector2(74, -9)
+
+[node name="Box3" parent="Objects" unique_id=1907739207 instance=ExtResource("4_c651c")]
+position = Vector2(65, -26)
