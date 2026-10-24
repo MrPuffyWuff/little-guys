@@ -2,7 +2,29 @@
 
 [ext_resource type="PhysicsMaterial" uid="uid://u46yrovq5xet" path="res://player/player_physics_mat.tres" id="1_6vaud"]
 [ext_resource type="Script" uid="uid://cdjybkaqdeq1j" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Texture2D" uid="uid://2sj7xk4xn1go" path="res://assets/programmer_art/little guy protag-2.png.png" id="3_6vaud"]
+[ext_resource type="Texture2D" uid="uid://ccaru5apui5a" path="res://assets/mcs/MC_red.png" id="3_6vaud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4n2d"]
+atlas = ExtResource("3_6vaud")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qklng"]
+atlas = ExtResource("3_6vaud")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bva4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4n2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qklng")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
 radius = 5.0
@@ -20,10 +42,11 @@ contact_monitor = true
 max_contacts_reported = 50
 script = ExtResource("1_rkbax")
 
-[node name="Body" type="Sprite2D" parent="." unique_id=1273366091]
-texture = ExtResource("3_6vaud")
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1019733676]
+position = Vector2(0, 7)
+sprite_frames = SubResource("SpriteFrames_7bva4")
+autoplay = "default"
 offset = Vector2(0, -8)
-region_rect = Rect2(16, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778501678]
 position = Vector2(0, -3)
