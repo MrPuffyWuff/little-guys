@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ba043xofaokbd" path="res://player/bottom.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://bodk6tsvqy6r8" path="res://player/top.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://c2ebvyltgi4a6" path="res://objects/box/box.tscn" id="4_c651c"]
+[ext_resource type="PackedScene" uid="uid://bqc5lxw7k0od1" path="res://objects/pickups/key/key.tscn" id="5_3wy1v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
 texture = ExtResource("1_53q0u")
@@ -76,3 +77,12 @@ disable_collision = false
 
 [node name="Box" parent="." unique_id=1843571400 instance=ExtResource("4_c651c")]
 position = Vector2(56, -9)
+
+[node name="Box2" parent="." unique_id=2101576773 instance=ExtResource("4_c651c")]
+position = Vector2(74, -9)
+
+[node name="Box3" parent="." unique_id=1907739207 instance=ExtResource("4_c651c")]
+position = Vector2(65, -26)
+
+[node name="Key" parent="." unique_id=1090568882 instance=ExtResource("5_3wy1v")]
+position = Vector2(104, -17)

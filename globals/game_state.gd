@@ -1,6 +1,7 @@
 extends Node
 
 var cur_player : Player = null
+var current_items: Array[String] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
