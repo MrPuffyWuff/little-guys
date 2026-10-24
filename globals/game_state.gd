@@ -34,4 +34,4 @@ func _process(delta: float) -> void:
 		bot_player = player_a
 	elif player_a.global_position.y < player_b.global_position.y:
 		bot_player = player_b
-	print('BOT:', bot_player.name if bot_player else 'null','TOP:', top_player.name if top_player else 'null')
+	#print('BOT:', bot_player.name if bot_player else 'null','TOP:', top_player.name if top_player else 'null')
