@@ -3,7 +3,7 @@ extends RigidBody2D
 class_name Player
 
 const SPEED = 50.0
-const JUMP_VELOCITY = -500.0
+const JUMP_STRENGTH = 500.0 * 75
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -20,13 +20,12 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		if GameState.bot_player == self:
 			GameState.bot_player = null
 	
-	if GameState.bot_player != self:
+	if GameState.bot_player and GameState.bot_player != self:
 		return
 	
 	#print(self.name)
-	
 	if is_on_floor and Input.is_action_just_pressed("player_jump"):
-		linear_velocity.y = JUMP_VELOCITY
+		apply_central_force(Vector2.UP * JUMP_STRENGTH)
 
 	var direction := Input.get_axis("player_left", "player_right")
 	if direction:
