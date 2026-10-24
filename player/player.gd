@@ -11,7 +11,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var is_on_floor : bool = false
 	
 	for body in get_colliding_bodies():
-		if body is TileMapLayer:
+		if body is TileMapLayer or (body.has_meta("is_floor") and body.get_meta("is_floor")):
 			is_on_floor = true
 			if not GameState.cur_player:
 				GameState.cur_player = self

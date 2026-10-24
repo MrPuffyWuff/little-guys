@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c2ebvyltgi4a6"]
+
+[ext_resource type="Texture2D" uid="uid://hh5o8asnuqa4" path="res://icon.svg" id="1_e5lxm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4je7q"]
+friction = 0.3
+bounce = 0.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5lxm"]
+size = Vector2(16, 16)
+
+[node name="Box" type="RigidBody2D" unique_id=1843571400]
+collision_mask = 3
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_4je7q")
+metadata/is_floor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1802243328]
+texture = ExtResource("1_e5lxm")
+region_enabled = true
+region_rect = Rect2(55.74327, 60.299538, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1711247851]
+shape = SubResource("RectangleShape2D_e5lxm")
