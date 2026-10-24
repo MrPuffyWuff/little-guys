@@ -9,7 +9,7 @@ size = Vector2(8, 8)
 size = Vector2(8, 8)
 
 [node name="Key" type="Area2D" unique_id=1090568882 node_paths=PackedStringArray("item_sprite")]
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("1_0wxwg")
 item_name = "key"
 item_sprite = NodePath("Sprite2D")
