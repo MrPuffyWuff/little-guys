@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bodk6tsvqy6r8"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://u46yrovq5xet" path="res://player/player_physics_mat.tres" id="1_3fbq4"]
 [ext_resource type="Script" uid="uid://cdjybkaqdeq1j" path="res://player/player.gd" id="1_h2khc"]
 [ext_resource type="Texture2D" uid="uid://hh5o8asnuqa4" path="res://icon.svg" id="1_oc280"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c651c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
 radius = 5.0
@@ -15,7 +14,7 @@ size = Vector2(16, 3)
 [node name="Top" type="RigidBody2D" unique_id=667853855]
 collision_layer = 2
 collision_mask = 3
-physics_material_override = SubResource("PhysicsMaterial_c651c")
+physics_material_override = ExtResource("1_3fbq4")
 contact_monitor = true
 max_contacts_reported = 50
 script = ExtResource("1_h2khc")
@@ -35,4 +34,3 @@ position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_55d6i")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=320501897]
-zoom = Vector2(3, 3)

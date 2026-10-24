@@ -6,7 +6,7 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
 
-func _physics_process(delta: float) -> void:
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	var is_on_floor : bool = false
 	
@@ -37,3 +37,4 @@ func _physics_process(delta: float) -> void:
 		linear_velocity.x = SPEED * direction
 	else:
 		linear_velocity.x = move_toward(linear_velocity.x, 0, SPEED)
+	
