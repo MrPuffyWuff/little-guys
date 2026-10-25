@@ -1,5 +1,7 @@
 extends Node
 
+var fallen_over: bool = false
+
 var current_items: Array[String] = []
 signal new_top_node
 
@@ -19,13 +21,14 @@ var bot_player : Player = null:
 		else:
 			top_player = player_a
 		new_top_node.emit()
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if player_a.global_position.y >= -1 and player_b.global_position.y >= -1:
+		fallen_over = true
+	else:
+		fallen_over = false
 	
 	if abs(player_a.global_position.y - player_b.global_position.y) < 8:
 		return

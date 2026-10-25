@@ -5,8 +5,6 @@ class_name Player
 const SPEED = 75.0
 const JUMP_STRENGTH = 400.0 * 75
 
-
-
 func _ready() -> void:
 	#await get_tree().process_frame
 	#GameState.new_top_node.connect(_on_new_top_node)

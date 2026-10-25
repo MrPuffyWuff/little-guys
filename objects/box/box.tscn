@@ -1,10 +1,32 @@
 [gd_scene format=3 uid="uid://c2ebvyltgi4a6"]
 
-[ext_resource type="Texture2D" uid="uid://hh5o8asnuqa4" path="res://icon.svg" id="1_e5lxm"]
+[ext_resource type="Texture2D" uid="uid://qsr57bynji3b" path="res://assets/dead_little_guy.png" id="1_2kn5q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4je7q"]
 friction = 0.3
 bounce = 0.3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv1ks"]
+atlas = ExtResource("1_2kn5q")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adad5"]
+atlas = ExtResource("1_2kn5q")
+region = Rect2(17, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bva4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv1ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adad5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5lxm"]
 size = Vector2(16, 16)
@@ -15,10 +37,9 @@ mass = 2.0
 physics_material_override = SubResource("PhysicsMaterial_4je7q")
 metadata/is_floor = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1802243328]
-texture = ExtResource("1_e5lxm")
-region_enabled = true
-region_rect = Rect2(55.74327, 60.299538, 16, 16)
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=14586851]
+sprite_frames = SubResource("SpriteFrames_7bva4")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1711247851]
 shape = SubResource("RectangleShape2D_e5lxm")
