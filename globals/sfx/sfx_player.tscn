@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://qm4dv5xibeu8" path="res://assets/sfx/jame_gam_jump.mp3" id="5_k7s1w"]
 [ext_resource type="AudioStream" uid="uid://col3245q1jirc" path="res://assets/sfx/jame_gam_win.mp3" id="6_tpd11"]
 [ext_resource type="AudioStream" uid="uid://d15hlp4rvlc2g" path="res://assets/sfx/jame_gam_ticket.mp3" id="7_at2dc"]
+[ext_resource type="AudioStream" uid="uid://vh7ii31lwnn" path="res://globals/sfx/jame_gam_lose.mp3" id="8_hfyi1"]
 
 [sub_resource type="Resource" id="Resource_blmy5"]
 script = ExtResource("2_3ny5u")
@@ -38,6 +39,11 @@ stream = ExtResource("7_at2dc")
 pitch_variance = 9.1
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
+[sub_resource type="Resource" id="Resource_4e01n"]
+script = ExtResource("2_3ny5u")
+stream = ExtResource("8_hfyi1")
+metadata/_custom_type_script = "uid://c3d63fvkogmx2"
+
 [node name="SfxPlayer" type="Node" unique_id=1790965844]
 process_mode = 3
 script = ExtResource("1_xnm38")
@@ -46,5 +52,6 @@ id_to_setting = Dictionary[int, ExtResource("2_3ny5u")]({
 1: SubResource("Resource_67544"),
 2: SubResource("Resource_qrh1g"),
 3: SubResource("Resource_e4rca"),
-4: SubResource("Resource_mnq6a")
+4: SubResource("Resource_mnq6a"),
+5: SubResource("Resource_4e01n")
 })

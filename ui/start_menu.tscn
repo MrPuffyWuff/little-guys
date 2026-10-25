@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c4x60inqrfbdf" path="res://assets/ui/cred_but.png" id="5_lnpn0"]
 [ext_resource type="Texture2D" uid="uid://dykt6t08m7sdg" path="res://assets/ui/cred_but_press.png" id="6_dfrpb"]
 [ext_resource type="Texture2D" uid="uid://dkl210r1vsan7" path="res://assets/ui/cred_but_hover.png" id="7_sdwtg"]
+[ext_resource type="FontFile" uid="uid://3nim8femmi3m" path="res://assets/background/font.png" id="9_eh4yk"]
 
 [node name="StartMenu" type="Control" unique_id=1539353761]
 layout_mode = 3
@@ -47,6 +48,16 @@ scale = Vector2(3, 3)
 texture_normal = ExtResource("5_lnpn0")
 texture_pressed = ExtResource("6_dfrpb")
 texture_hover = ExtResource("7_sdwtg")
+
+[node name="Label" type="Label" parent="." unique_id=16470858]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 21.0
+offset_right = 869.0
+offset_bottom = 280.0
+theme_override_fonts/font = ExtResource("9_eh4yk")
+theme_override_font_sizes/font_size = 64
+text = "GOOFY GOOBERS"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Credit" to="." method="_on_credit_pressed"]

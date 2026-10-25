@@ -13,6 +13,23 @@ var x_direction = 1
 
 var player_in_radius = false
 
+var alert_level = 0:
+	set(new_value):
+		print(alert_level)
+		alert_level = clampi(new_value, -1, 4)
+		if alert_level == -1:
+			$Alert.visible = false
+		else:
+			$Alert.visible = true
+			$Alert.frame = clampi(alert_level, 0, 4)
+		
+		if alert_level == 4:
+			get_tree().paused = true
+			SFX.play(SFX.Id.LOSE)
+			await get_tree().create_timer(4).timeout
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://main/main.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.play(colors[randi_range(0,4)])
@@ -31,30 +48,14 @@ func _physics_process(_delta: float) -> void:
 	
 func _process(delta: float) -> void:
 	if player_in_radius and GameState.fallen_over and $AlertTimer.is_stopped():
+		print("hi")
+		alert_level += 1
 		SFX.play(SFX.Id.ALERT)
 		$AlertTimer.start()
-		$Alert.visible = true
+	elif $AlertTimer.is_stopped():
+		$AlertTimer.start()
+		alert_level -= 1
 	
-	if not player_in_radius or not GameState.fallen_over:
-		$AlertTimer.stop()
-		$Alert.visible = false
-	
-	if $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 4:
-		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.05)
-		$Alert.frame = 1
-	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 3:
-		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.1)
-		$Alert.frame = 2
-	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 2:
-		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.15)
-		$Alert.frame = 3
-	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 1:
-		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.2)
-		$Alert.frame = 4
-	elif $AlertTimer.time_left > ($AlertTimer.wait_time / 5.0) * 0:
-		$Alert.frame = 4
-		get_tree().change_scene_to_file("res://main/main.tscn")
-
 func _on_detection_radius_body_entered(_body: Node2D) -> void:
 	player_in_radius = true
 	

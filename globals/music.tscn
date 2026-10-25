@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://defrkjn3c4t4l"]
 
 [ext_resource type="AudioStream" uid="uid://c4wjx11va7vfk" path="res://assets/music/jame_gam_loop_1.mp3" id="1_q3wc6"]
+[ext_resource type="Script" uid="uid://6006g4er1h55" path="res://globals/music.gd" id="2_3l76d"]
 
 [node name="Music" type="AudioStreamPlayer" unique_id=1478427924]
 stream = ExtResource("1_q3wc6")
 autoplay = true
 parameters/looping = true
+script = ExtResource("2_3l76d")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -32,6 +32,7 @@ enum Id {
 	JUMP,
 	WIN,
 	TICKET,
+	LOSE,
 }
 
 const PRINT_DEBUG_MESSAGES: bool = false
