@@ -42,10 +42,9 @@ max_contacts_reported = 50
 script = ExtResource("1_h2khc")
 
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=1543623786]
-position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_7bva4")
 autoplay = "default"
-offset = Vector2(0, -8)
+offset = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=187978786]
 position = Vector2(0, 3)

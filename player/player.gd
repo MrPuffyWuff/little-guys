@@ -5,28 +5,15 @@ class_name Player
 const SPEED = 75.0
 const JUMP_STRENGTH = 400.0 * 75
 
-@onready var sprite_height = $Body.sprite_frames.get_frame_texture("default", $Body.frame).get_size().y
-@onready var coll_pos = $CollisionShape2D.position
-@onready var coll_target = coll_pos + Vector2(0, sprite_height * 3/4)
-@onready var coll2_pos = $CollisionShape2D2.position
-@onready var coll2_target = coll2_pos + Vector2(0, sprite_height * 3/4)
-
-@onready var camera_pos
-@onready var camera_target
 
 
 func _ready() -> void:
-	# Only the top player has a Camera2D
-	var camera = find_child("Camera2D", false)
-	if camera is Camera2D:
-		camera_pos = camera.position
-		camera_target = camera.position * Vector2(-1, 1)
-	
 	#await get_tree().process_frame
 	#GameState.new_top_node.connect(_on_new_top_node)
 	pass
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	
 	var is_on_floor : bool = false
 	
 	for body in get_colliding_bodies():
@@ -41,27 +28,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	if GameState.top_player == GameState.player_a:
 		$Body.rotation = lerp($Body.rotation, 0.0, state.step * 5.0)
-		
-		# Only start realigning the collision shapes when the angle isn't too sharp
-		# to avoid weird collision stuff
-		if abs($Body.rotation - 0.0) <= PI / 2:
-			$CollisionShape2D.position = lerp($CollisionShape2D.position, coll_pos, state.step * 5.0)
-			$CollisionShape2D2.position = lerp($CollisionShape2D2.position, coll2_pos, state.step * 5.0)
-			
-			var camera = find_child("Camera2D", false)
-			if camera is Camera2D:
-				camera.position = lerp(camera.position, camera_pos, state.step)
 	else:
 		$Body.rotation = lerp($Body.rotation, PI, state.step * 5.0)
-		
-		if abs($Body.rotation - PI) <= PI / 2:
-			$CollisionShape2D.position = lerp($CollisionShape2D.position, coll_target, state.step * 5.0)
-			$CollisionShape2D2.position = lerp($CollisionShape2D2.position, coll2_target, state.step * 5.0)
-			
-			var camera = find_child("Camera2D", false)
-			if camera is Camera2D:
-				camera.position = lerp(camera.position, camera_target, state.step)
-	
 	
 	if GameState.bot_player != self:
 		return

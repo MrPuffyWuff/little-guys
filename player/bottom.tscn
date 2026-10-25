@@ -43,10 +43,9 @@ max_contacts_reported = 50
 script = ExtResource("1_rkbax")
 
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=1019733676]
-position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_7bva4")
 autoplay = "default"
-offset = Vector2(0, -8)
+offset = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778501678]
 position = Vector2(0, -3)
