@@ -11,4 +11,5 @@ func _ready() -> void:
 func _on_finished() -> void:
 	# Restart the music if it's needed
 	Music.play()
+	GameState.playing = false
 	get_tree().call_deferred("change_scene_to_file", next_scene)

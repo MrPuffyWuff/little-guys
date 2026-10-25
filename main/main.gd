@@ -5,3 +5,4 @@ extends Node2D
 func _ready() -> void:
 	GameState.player_a = $Top
 	GameState.player_b = $Bottom
+	GameState.playing = true

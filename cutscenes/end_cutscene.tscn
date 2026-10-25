@@ -21,7 +21,7 @@ stream = ExtResource("1_nyaaj")
 autoplay = true
 expand = true
 script = ExtResource("3_6gnid")
-next_scene = "uid://q14d54i2fgal"
+next_scene = "uid://b2j6omrw50cjg"
 
 [node name="Top" parent="." unique_id=667853855 instance=ExtResource("2_d1hp6")]
 process_mode = 4

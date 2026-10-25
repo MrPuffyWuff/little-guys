@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Little Guys"
-run/main_scene="uid://q14d54i2fgal"
+run/main_scene="uid://b2j6omrw50cjg"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.svg"

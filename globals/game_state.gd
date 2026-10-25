@@ -7,6 +7,7 @@ var fallen_over: bool = false
 
 var current_items: Array[String] = []
 
+var playing : bool = false
 
 ##Default Top
 var player_a : Player
@@ -27,6 +28,9 @@ var bot_player : Player = null:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if not playing:
+		return
 	
 	if abs(player_a.global_position.y - player_b.global_position.y) <= 4:
 		fallen_over = true

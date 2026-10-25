@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b2j6omrw50cjg"]
+
+[ext_resource type="Texture2D" uid="uid://b7o8wo8k8lros" path="res://assets/ui/silly.png" id="1_kw4xl"]
+[ext_resource type="Script" uid="uid://bgv0830uevp8a" path="res://ui/start_menu.gd" id="1_lbgow"]
+[ext_resource type="Texture2D" uid="uid://b5n32go3xcg2b" path="res://assets/ui/start_but.png" id="2_dr3nq"]
+[ext_resource type="Texture2D" uid="uid://cpb8sqol25ahw" path="res://assets/ui/start_but_press.png" id="3_lbgow"]
+[ext_resource type="Texture2D" uid="uid://egdbbnvi0h7r" path="res://assets/ui/start_but_hover.png" id="4_eh4yk"]
+[ext_resource type="Texture2D" uid="uid://c4x60inqrfbdf" path="res://assets/ui/cred_but.png" id="5_lnpn0"]
+[ext_resource type="Texture2D" uid="uid://dykt6t08m7sdg" path="res://assets/ui/cred_but_press.png" id="6_dfrpb"]
+[ext_resource type="Texture2D" uid="uid://dkl210r1vsan7" path="res://assets/ui/cred_but_hover.png" id="7_sdwtg"]
+
+[node name="StartMenu" type="Control" unique_id=1539353761]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 960.0
+offset_bottom = 540.0
+script = ExtResource("1_lbgow")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1596272761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kw4xl")
+
+[node name="Start" type="TextureButton" parent="." unique_id=903000045]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 299.0
+offset_right = 709.0
+offset_bottom = 339.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_dr3nq")
+texture_pressed = ExtResource("3_lbgow")
+texture_hover = ExtResource("4_eh4yk")
+
+[node name="Credit" type="TextureButton" parent="." unique_id=1267495130]
+visible = false
+layout_mode = 0
+offset_left = 610.0
+offset_top = 425.0
+offset_right = 711.0
+offset_bottom = 465.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("5_lnpn0")
+texture_pressed = ExtResource("6_dfrpb")
+texture_hover = ExtResource("7_sdwtg")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Credit" to="." method="_on_credit_pressed"]
