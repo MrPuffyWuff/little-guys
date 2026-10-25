@@ -18,6 +18,7 @@ const MC_RED_HAND = preload("uid://xh1qxnw75dij")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameState.new_top_node.connect(change_hand_sprite)
+	GameState.items_change.connect(_on_items_change)
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -44,10 +45,13 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		global_position = arm_vec.normalized() * max_dist + anchor.global_position
 		position -= linear_velocity * 0.01
 		linear_velocity = Vector2.ZERO
-	elif len_sq < min_dist_squared:
-		global_position = arm_vec.normalized() * min_dist + anchor.global_position
-		position -= linear_velocity * 0.01
-		linear_velocity = Vector2.ZERO
+	#elif len_sq < min_dist_squared:
+		#global_position = arm_vec.normalized() * min_dist + anchor.global_position
+		#position -= linear_velocity * 0.01
+		#linear_velocity = Vector2.ZERO
+
+func _on_items_change():
+	$Key.visible = "key" in GameState.current_items
 
 func change_hand_sprite() -> void:
 	if GameState.top_player == GameState.player_a:

@@ -22,6 +22,7 @@ item_sprite = NodePath("Sprite2D")
 collider = NodePath("../DoorCollision")
 
 [node name="Sprite2D" type="Sprite2D" parent="DoorArea" unique_id=1140375307]
+visible = false
 position = Vector2(0, -25.5)
 scale = Vector2(1, 2.0625)
 texture = SubResource("PlaceholderTexture2D_w81ou")

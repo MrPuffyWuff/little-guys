@@ -12,6 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player or body is Arm:
 		SFX.play(SFX.Id.TICKET)
 		GameState.current_items.append(item_name)
+		GameState.items_change.emit()
 		set_deferred("monitoring", false)
 		
 		# Hide any item sprites that are shown

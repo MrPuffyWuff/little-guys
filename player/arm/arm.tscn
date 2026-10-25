@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bejytegrmq87" path="res://player/arm/arm.gd" id="1_li02e"]
 [ext_resource type="Texture2D" uid="uid://dl4ju3ryod4rg" path="res://assets/mcs/mc_blue_hand.png" id="2_h0w1k"]
 [ext_resource type="Texture2D" uid="uid://xh1qxnw75dij" path="res://assets/mcs/mc_red_hand.png" id="3_x6thu"]
+[ext_resource type="Texture2D" uid="uid://defin2xcwm7id" path="res://assets/items/ticket.png" id="4_x6thu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edrxi"]
 atlas = ExtResource("2_h0w1k")
@@ -66,3 +67,7 @@ autoplay = "blue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=157792921]
 shape = SubResource("CircleShape2D_55d6i")
+
+[node name="Key" type="Sprite2D" parent="." unique_id=267854264]
+visible = false
+texture = ExtResource("4_x6thu")

@@ -1,9 +1,12 @@
 extends Node
 
+signal new_top_node
+signal items_change
+
 var fallen_over: bool = false
 
 var current_items: Array[String] = []
-signal new_top_node
+
 
 ##Default Top
 var player_a : Player
