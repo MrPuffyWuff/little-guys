@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://defrkjn3c4t4l"]
+
+[ext_resource type="AudioStream" uid="uid://c4wjx11va7vfk" path="res://assets/music/jame_gam_loop_1.mp3" id="1_q3wc6"]
+
+[node name="Music" type="AudioStreamPlayer" unique_id=1478427924]
+stream = ExtResource("1_q3wc6")
+autoplay = true
+parameters/looping = true

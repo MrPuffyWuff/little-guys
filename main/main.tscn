@@ -164,7 +164,7 @@ disable_collision = false
 position = Vector2(78, -88)
 
 [node name="KeyDoor" parent="." unique_id=1152561114 instance=ExtResource("6_kfbq2")]
-position = Vector2(118, -14)
+position = Vector2(1722, -10)
 
 [node name="Arm" parent="." unique_id=730618851 node_paths=PackedStringArray("anchor") instance=ExtResource("8_67ri8")]
 position = Vector2(20, -38)

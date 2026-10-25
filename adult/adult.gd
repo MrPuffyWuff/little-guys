@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 		
 	if $AlertTimer.time_left > 0.0 and $AlertTimer.time_left <= 0.5:
 		$Alert.frame = 4
-		print("OMG U GOT CAUGHT")
+		get_tree().change_scene_to_file("res://main/main.tscn")
 
 func _on_detection_radius_body_entered(_body: Node2D) -> void:
 	player_in_radius = true
