@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b1xxlba1j32r1" path="res://adult/adult.tscn" id="12_fwcvl"]
 [ext_resource type="Texture2D" uid="uid://c8dx0jpmywdvu" path="res://assets/background/entrance.png" id="15_s758e"]
 [ext_resource type="PackedScene" uid="uid://cfomnq5cwqhki" path="res://physics_item/physics_item.tscn" id="16_4hmqs"]
+[ext_resource type="Texture2D" uid="uid://d04i87bpofkas" path="res://assets/items/ugly_hydrant.png" id="18_vapsy"]
 [ext_resource type="Script" uid="uid://cpws5t418iqyv" path="res://main/win_box.gd" id="19_q0sk7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
@@ -91,6 +92,9 @@ size = Vector2(83, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vapsy"]
 size = Vector2(33, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55d6i"]
+size = Vector2(8, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fngjv"]
 size = Vector2(80.5, 141.75)
@@ -273,6 +277,17 @@ collision_mask = 0
 position = Vector2(756.5, -6)
 shape = SubResource("RectangleShape2D_vapsy")
 metadata/is_floor = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ObjectCollisions" unique_id=2040786051]
+metadata/is_floor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjectCollisions/StaticBody2D" unique_id=2025225457]
+position = Vector2(109, -7)
+texture = ExtResource("18_vapsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectCollisions/StaticBody2D" unique_id=311938238]
+position = Vector2(109, -4)
+shape = SubResource("RectangleShape2D_55d6i")
 
 [node name="Adults" type="Node" parent="." unique_id=1997986492]
 

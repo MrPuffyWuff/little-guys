@@ -41,16 +41,16 @@ func _process(delta: float) -> void:
 	
 	if $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 4:
 		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.05)
-		$Alert.frame = 0
+		$Alert.frame = 1
 	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 3:
 		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.1)
-		$Alert.frame = 1
+		$Alert.frame = 2
 	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 2:
 		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.15)
-		$Alert.frame = 2
+		$Alert.frame = 3
 	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 1:
 		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.2)
-		$Alert.frame = 3
+		$Alert.frame = 4
 	elif $AlertTimer.time_left > ($AlertTimer.wait_time / 5.0) * 0:
 		$Alert.frame = 4
 		get_tree().change_scene_to_file("res://main/main.tscn")

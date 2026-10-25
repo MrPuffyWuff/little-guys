@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c2ebvyltgi4a6"]
 
 [ext_resource type="Texture2D" uid="uid://qsr57bynji3b" path="res://assets/dead_little_guy.png" id="1_2kn5q"]
+[ext_resource type="Texture2D" uid="uid://bggrn8mhqay2s" path="res://assets/items/john_amazon_box.png" id="2_xv1ks"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4je7q"]
 friction = 0.3
@@ -14,6 +15,10 @@ region = Rect2(0, 0, 17, 16)
 atlas = ExtResource("1_2kn5q")
 region = Rect2(17, 0, 17, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mufa"]
+atlas = ExtResource("2_xv1ks")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7bva4"]
 animations = [{
 "frames": [{
@@ -26,6 +31,14 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mufa")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5lxm"]
@@ -39,7 +52,8 @@ metadata/is_floor = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=14586851]
 sprite_frames = SubResource("SpriteFrames_7bva4")
-autoplay = "default"
+animation = &"new_animation"
+autoplay = "new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1711247851]
 shape = SubResource("RectangleShape2D_e5lxm")
