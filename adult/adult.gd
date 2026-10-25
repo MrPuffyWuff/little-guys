@@ -38,19 +38,15 @@ func _process(delta: float) -> void:
 		$AlertTimer.stop()
 		$Alert.visible = false
 	
-	if $AlertTimer.time_left >= 2.0 and $AlertTimer.time_left <= 2.5:
+	if $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 4:
 		$Alert.frame = 0
-		
-	if $AlertTimer.time_left >= 1.5 and $AlertTimer.time_left <= 2.0:
+	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 3:
 		$Alert.frame = 1
-		
-	if $AlertTimer.time_left >= 1.0 and $AlertTimer.time_left <= 1.5:
+	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 2:
 		$Alert.frame = 2
-		
-	if $AlertTimer.time_left >= 0.5 and $AlertTimer.time_left <= 1.0:
+	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 1:
 		$Alert.frame = 3
-		
-	if $AlertTimer.time_left > 0.0 and $AlertTimer.time_left <= 0.5:
+	elif $AlertTimer.time_left > ($AlertTimer.wait_time / 5.0) * 0:
 		$Alert.frame = 4
 		get_tree().change_scene_to_file("res://main/main.tscn")
 

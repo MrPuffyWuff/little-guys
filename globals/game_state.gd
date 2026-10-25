@@ -25,7 +25,7 @@ var bot_player : Player = null:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if abs(player_a.global_position.y - player_b.global_position.y) <= 1:
+	if abs(player_a.global_position.y - player_b.global_position.y) <= 4:
 		fallen_over = true
 	else:
 		fallen_over = false
