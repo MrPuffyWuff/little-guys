@@ -8,7 +8,7 @@ var colors: Array = [
 	"yellow",
 ]
 
-const SPEED: int = 50
+var SPEED: int = 50
 var x_direction = 1
 
 var player_in_radius = false
@@ -51,9 +51,11 @@ func _process(delta: float) -> void:
 		print("hi")
 		alert_level += 1
 		SFX.play(SFX.Id.ALERT)
+		SPEED = 0
 		$AlertTimer.start()
 	elif $AlertTimer.is_stopped():
 		$AlertTimer.start()
+		SPEED = 50
 		alert_level -= 1
 	
 func _on_detection_radius_body_entered(_body: Node2D) -> void:
