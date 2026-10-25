@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bce2b1ktaiehp"]
+
+[ext_resource type="Script" uid="uid://32rba0q88iyt" path="res://main/main.gd" id="1_l1bvp"]
+[ext_resource type="VideoStream" uid="uid://c5h33egticn7a" path="res://assets/cutscenes/end_cutscene.ogv" id="1_nyaaj"]
+[ext_resource type="PackedScene" uid="uid://bodk6tsvqy6r8" path="res://player/top.tscn" id="2_d1hp6"]
+[ext_resource type="Script" uid="uid://b8qih62v8yvpl" path="res://cutscenes/cutscene_video.gd" id="3_6gnid"]
+[ext_resource type="PackedScene" uid="uid://ba043xofaokbd" path="res://player/bottom.tscn" id="3_l1bvp"]
+
+[node name="EndCutscene" type="Node2D" unique_id=828314616]
+script = ExtResource("1_l1bvp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=41206195]
+
+[node name="CutsceneVideo" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=59856902]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_nyaaj")
+autoplay = true
+expand = true
+script = ExtResource("3_6gnid")
+next_scene = "uid://q14d54i2fgal"
+
+[node name="Top" parent="." unique_id=667853855 instance=ExtResource("2_d1hp6")]
+process_mode = 4
+position = Vector2(20, -24)
+
+[node name="Bottom" parent="." unique_id=1459387099 instance=ExtResource("3_l1bvp")]
+process_mode = 4
+position = Vector2(20, -8)
+
+[node name="PlayerJoint" type="PinJoint2D" parent="." unique_id=571610914]
+process_mode = 4
+position = Vector2(20, -16)
+node_a = NodePath("../Top")
+node_b = NodePath("../Bottom")
+bias = 0.9
+disable_collision = false
+
+[connection signal="finished" from="CanvasLayer/CutsceneVideo" to="CanvasLayer/CutsceneVideo" method="_on_finished"]

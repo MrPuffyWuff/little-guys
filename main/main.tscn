@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b1xxlba1j32r1" path="res://adult/adult.tscn" id="12_fwcvl"]
 [ext_resource type="Texture2D" uid="uid://c8dx0jpmywdvu" path="res://assets/background/entrance.png" id="15_s758e"]
 [ext_resource type="PackedScene" uid="uid://cfomnq5cwqhki" path="res://physics_item/physics_item.tscn" id="16_4hmqs"]
+[ext_resource type="Script" uid="uid://cpws5t418iqyv" path="res://main/win_box.gd" id="19_q0sk7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
 texture = ExtResource("1_53q0u")
@@ -257,6 +258,7 @@ shape = SubResource("RectangleShape2D_piupu")
 [node name="SnackShelves" type="StaticBody2D" parent="ObjectCollisions" unique_id=1940577943]
 position = Vector2(871, 1)
 collision_mask = 0
+metadata/is_floor = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectCollisions/SnackShelves" unique_id=30195619]
 position = Vector2(617.5, -4)
@@ -299,12 +301,19 @@ position = Vector2(1122, -15)
 position = Vector2(1568, -17)
 
 [node name="WinBox" type="Area2D" parent="." unique_id=1437103072]
+collision_mask = 3
+script = ExtResource("19_q0sk7")
+end_cutscene = "uid://bce2b1ktaiehp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinBox" unique_id=1944652349]
 position = Vector2(1793.75, -56.125)
 shape = SubResource("RectangleShape2D_fngjv")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="WinBox" unique_id=1323430077]
+
 [node name="Entrance" type="Sprite2D" parent="." unique_id=1919220267]
 z_index = 1
 position = Vector2(947, -75)
 texture = ExtResource("15_s758e")
+
+[connection signal="body_entered" from="WinBox" to="WinBox" method="_on_body_entered"]
