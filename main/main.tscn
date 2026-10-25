@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://mnl2fvd2cfhg" path="res://assets/background/foreground.png" id="4_na0o7"]
 [ext_resource type="PackedScene" uid="uid://bqc5lxw7k0od1" path="res://objects/pickups/key/key.tscn" id="5_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://nj5shg4p4jy6" path="res://objects/pickups/key_door/key_door.tscn" id="6_kfbq2"]
-[ext_resource type="Texture2D" uid="uid://bxqgw63108gfi" path="res://assets/background/cars.png" id="7_n3o0a"]
+[ext_resource type="Texture2D" uid="uid://qvdnki7yagfm" path="res://assets/background/Second Layer.png" id="7_4hmqs"]
 [ext_resource type="PackedScene" uid="uid://dy1yfa0qaa1l4" path="res://player/arm/arm.tscn" id="8_67ri8"]
 [ext_resource type="Texture2D" uid="uid://ctsdqwf3glplb" path="res://assets/background/theater_interior.png" id="8_n3o0a"]
 [ext_resource type="PackedScene" uid="uid://cmd0f1pheaf7l" path="res://player/camera/camera.tscn" id="10_piupu"]
@@ -130,7 +130,7 @@ texture = ExtResource("2_bsumw")
 
 [node name="CarsForeground" type="Sprite2D" parent="." unique_id=1638758770]
 position = Vector2(945, -67)
-texture = ExtResource("7_n3o0a")
+texture = ExtResource("7_4hmqs")
 
 [node name="TheaterForeground" type="Sprite2D" parent="." unique_id=1208147980]
 position = Vector2(960, -65)
@@ -181,22 +181,22 @@ position = Vector2(65, -16)
 
 [node name="Item1" parent="Objects" unique_id=1911277811 instance=ExtResource("16_4hmqs")]
 position = Vector2(1363, -55)
-mass = 0.001
+mass = 0.35
 metadata/is_floor = true
 
 [node name="Item2" parent="Objects" unique_id=1586724158 instance=ExtResource("16_4hmqs")]
 position = Vector2(1377, -66)
-mass = 0.001
+mass = 0.35
 metadata/is_floor = true
 
 [node name="Item3" parent="Objects" unique_id=1879023760 instance=ExtResource("16_4hmqs")]
 position = Vector2(1390, -54)
-mass = 0.001
+mass = 0.35
 metadata/is_floor = true
 
 [node name="Item4" parent="Objects" unique_id=437112448 instance=ExtResource("16_4hmqs")]
 position = Vector2(1380, -39)
-mass = 0.001
+mass = 0.35
 metadata/is_floor = true
 
 [node name="ObjectCollisions" type="Node" parent="." unique_id=1031604052]
