@@ -27,7 +27,6 @@ Music="*uid://defrkjn3c4t4l"
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [input]
 
