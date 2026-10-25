@@ -180,6 +180,7 @@ node_b = NodePath("../Bottom")
 
 [node name="Key" parent="." unique_id=1090568882 instance=ExtResource("5_3wy1v")]
 position = Vector2(96, -84)
+bob_height = 6.0
 
 [node name="KeyDoor" parent="." unique_id=1152561114 instance=ExtResource("6_kfbq2")]
 position = Vector2(1722, -10)
