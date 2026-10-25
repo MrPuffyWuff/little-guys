@@ -37,6 +37,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	#print(self.name)
 	if is_on_floor and Input.is_action_just_pressed("player_jump"):
 		apply_central_force(Vector2.UP * JUMP_STRENGTH)
+		SFX.play(SFX.Id.JUMP)
 
 	var direction := Input.get_axis("player_left", "player_right")
 	if direction:

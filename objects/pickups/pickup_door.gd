@@ -12,5 +12,6 @@ func _on_body_entered(body: Node2D) -> void:
 		# Allow passing through if the item was collected
 		if needed_item_name in GameState.current_items:
 			item_sprite.self_modulate.a = 0.6
+			SFX.play(SFX.Id.WIN)
 			collider.set_deferred("disabled", true)
 			set_deferred("monitoring", false)

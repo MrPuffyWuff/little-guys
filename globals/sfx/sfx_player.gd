@@ -27,7 +27,11 @@ extends Node
 # Optionally, append a comment (##) after each id to describe where it is used
 ## List of all sounds. Add a new id here when you add a new sound.
 enum Id {
-	YOUR_ID,
+	ALERT,
+	INCREMENT,
+	JUMP,
+	WIN,
+	TICKET,
 }
 
 const PRINT_DEBUG_MESSAGES: bool = false
