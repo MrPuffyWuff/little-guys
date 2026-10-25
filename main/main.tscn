@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cfomnq5cwqhki" path="res://physics_item/physics_item.tscn" id="16_4hmqs"]
 [ext_resource type="Texture2D" uid="uid://d04i87bpofkas" path="res://assets/items/ugly_hydrant.png" id="18_vapsy"]
 [ext_resource type="Script" uid="uid://cpws5t418iqyv" path="res://main/win_box.gd" id="19_q0sk7"]
+[ext_resource type="Texture2D" uid="uid://i42ik5sdxrop" path="res://assets/cutscenes/lose.png" id="23_re7it"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
 texture = ExtResource("1_53q0u")
@@ -344,5 +345,14 @@ shape = SubResource("RectangleShape2D_fngjv")
 z_index = 1
 position = Vector2(947, -75)
 texture = ExtResource("15_s758e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=623866809]
+
+[node name="Lose" type="TextureRect" parent="CanvasLayer" unique_id=1495376406]
+unique_name_in_owner = true
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("23_re7it")
+expand_mode = 1
 
 [connection signal="body_entered" from="WinBox" to="WinBox" method="_on_body_entered"]

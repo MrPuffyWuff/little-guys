@@ -26,12 +26,14 @@ var alert_level = 0:
 		if alert_level == 4:
 			get_tree().paused = true
 			SFX.play(SFX.Id.LOSE)
+			%Lose.visible = true
 			await get_tree().create_timer(4).timeout
 			get_tree().paused = false
 			get_tree().change_scene_to_file("res://main/main.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	%Lose.visible = false
 	$AnimatedSprite2D.play(colors[randi_range(0,4)])
 	$Alert.visible = false
 
