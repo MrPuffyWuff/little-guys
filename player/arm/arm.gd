@@ -15,6 +15,9 @@ var min_dist_squared : float = min_dist**2
 const MC_BLUE_HAND = preload("uid://dl4ju3ryod4rg")
 const MC_RED_HAND = preload("uid://xh1qxnw75dij")
 
+const BLUE_ARM = preload("uid://d25vvu5by1gpr")
+const RED_ARM = preload("uid://cgs0uaoayisyc")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameState.new_top_node.connect(change_hand_sprite)
@@ -56,5 +59,7 @@ func _on_items_change():
 func change_hand_sprite() -> void:
 	if GameState.top_player == GameState.player_a:
 		$AnimatedSprite2D.play("blue")
+		$ArmLine.texture = BLUE_ARM
 	else:
 		$AnimatedSprite2D.play("red")
+		$ArmLine.texture = RED_ARM
