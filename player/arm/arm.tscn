@@ -1,15 +1,49 @@
 [gd_scene format=3 uid="uid://dy1yfa0qaa1l4"]
 
 [ext_resource type="Script" uid="uid://bejytegrmq87" path="res://player/arm/arm.gd" id="1_li02e"]
+[ext_resource type="Texture2D" uid="uid://dl4ju3ryod4rg" path="res://assets/mcs/mc_blue_hand.png" id="2_h0w1k"]
+[ext_resource type="Texture2D" uid="uid://xh1qxnw75dij" path="res://assets/mcs/mc_red_hand.png" id="3_x6thu"]
 
-[sub_resource type="Gradient" id="Gradient_1catv"]
-offsets = PackedFloat32Array(0, 0.95842093)
-colors = PackedColorArray(0, 0, 0, 1, 0.62, 0.018599983, 0.018599983, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_edrxi"]
+atlas = ExtResource("2_h0w1k")
+region = Rect2(0, 0, 8, 8)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_55d6i"]
-gradient = SubResource("Gradient_1catv")
-width = 4
-height = 4
+[sub_resource type="AtlasTexture" id="AtlasTexture_e03wo"]
+atlas = ExtResource("2_h0w1k")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmpl1"]
+atlas = ExtResource("3_x6thu")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee8bl"]
+atlas = ExtResource("3_x6thu")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bva4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edrxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e03wo")
+}],
+"loop": 1,
+"name": &"blue",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmpl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee8bl")
+}],
+"loop": 1,
+"name": &"red",
+"speed": 2.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55d6i"]
 radius = 2.0
@@ -19,8 +53,10 @@ collision_layer = 4
 gravity_scale = 0.0
 script = ExtResource("1_li02e")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1637164387]
-texture = SubResource("GradientTexture2D_55d6i")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=843039218]
+sprite_frames = SubResource("SpriteFrames_7bva4")
+animation = &"red"
+autoplay = "blue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=157792921]
 shape = SubResource("CircleShape2D_55d6i")
