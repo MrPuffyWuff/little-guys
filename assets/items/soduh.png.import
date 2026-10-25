@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqrqjptrkgoaa"
-path="res://.godot/imported/ticket.png-bef49509c6d9d830662765f44a260794.ctex"
+uid="uid://bsityvwt544x8"
+path="res://.godot/imported/soduh.png-44140e3c0edf1176aad98f0e3941fb5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/ticket.png"
-dest_files=["res://.godot/imported/ticket.png-bef49509c6d9d830662765f44a260794.ctex"]
+source_file="res://assets/items/soduh.png"
+dest_files=["res://.godot/imported/soduh.png-44140e3c0edf1176aad98f0e3941fb5a.ctex"]
 
 [params]
 

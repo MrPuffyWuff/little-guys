@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crixch3h15ktm"
-path="res://.godot/imported/theater_interior.png-d6d356905bd697b694a5992e11b5824c.ctex"
+uid="uid://c8exoxhuvr5wh"
+path="res://.godot/imported/single m.png-1a3b1bb27855f486344a85e4bfc647b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/theater_interior.png"
-dest_files=["res://.godot/imported/theater_interior.png-d6d356905bd697b694a5992e11b5824c.ctex"]
+source_file="res://assets/items/single m.png"
+dest_files=["res://.godot/imported/single m.png-1a3b1bb27855f486344a85e4bfc647b6.ctex"]
 
 [params]
 

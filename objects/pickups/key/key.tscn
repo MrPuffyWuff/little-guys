@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://bqc5lxw7k0od1"]
 
 [ext_resource type="Script" uid="uid://boxnvrb6ll3l5" path="res://objects/pickups/pickup.gd" id="1_0wxwg"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w81ou"]
-size = Vector2(8, 8)
+[ext_resource type="Texture2D" uid="uid://defin2xcwm7id" path="res://assets/items/ticket.png" id="2_q3pe8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w81ou"]
 size = Vector2(8, 8)
@@ -15,7 +13,7 @@ item_name = "key"
 item_sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=100289034]
-texture = SubResource("PlaceholderTexture2D_w81ou")
+texture = ExtResource("2_q3pe8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2070540904]
 shape = SubResource("RectangleShape2D_w81ou")

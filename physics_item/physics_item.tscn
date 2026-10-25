@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cfomnq5cwqhki"]
+
+[ext_resource type="Script" uid="uid://bimbbb0y2x47n" path="res://physics_item/physics_item.gd" id="1_vkju6"]
+[ext_resource type="Texture2D" uid="uid://cugumvsjivrmx" path="res://assets/items/layes.png" id="2_672ei"]
+[ext_resource type="Texture2D" uid="uid://b6am7gn1wifd7" path="res://assets/items/pobcorn.png" id="3_mlw6i"]
+[ext_resource type="Texture2D" uid="uid://c8exoxhuvr5wh" path="res://assets/items/single m.png" id="4_nwcal"]
+[ext_resource type="Texture2D" uid="uid://bsityvwt544x8" path="res://assets/items/soduh.png" id="5_no4g1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bva4"]
+size = Vector2(10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bva4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_672ei")
+}],
+"loop": 1,
+"name": &"layes",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mlw6i")
+}],
+"loop": 1,
+"name": &"pobcorn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nwcal")
+}],
+"loop": 1,
+"name": &"single_m",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_no4g1")
+}],
+"loop": 1,
+"name": &"soduh",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1911277811]
+script = ExtResource("1_vkju6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=504294340]
+shape = SubResource("RectangleShape2D_7bva4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1911706326]
+sprite_frames = SubResource("SpriteFrames_7bva4")
+animation = &"layes"
