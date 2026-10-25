@@ -4,7 +4,8 @@ class_name Player
 
 const SPEED = 75.0
 const JUMP_STRENGTH = 400.0 * 75
-
+@export var JUMP_COOLDOWN: float = 0.75
+var JUMP_ON_COOLDOWN = false
 
 
 func _ready() -> void:
@@ -36,16 +37,23 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		var offset : float = abs(-PI/2 - angle)
 		if offset > 0.5:
 			$Body.play("worry")
+			JUMP_COOLDOWN = 1.25
 		else:
 			$Body.play("default")
+			JUMP_COOLDOWN = 0.75
 	
 	if GameState.bot_player != self:
 		return
 	
 	#print(self.name)
 	if is_on_floor and Input.is_action_just_pressed("player_jump"):
-		apply_central_force(Vector2.UP * JUMP_STRENGTH)
-		SFX.play(SFX.Id.JUMP)
+		if not JUMP_ON_COOLDOWN:
+			apply_central_force(Vector2.UP * JUMP_STRENGTH)
+			SFX.play(SFX.Id.JUMP)
+			JUMP_ON_COOLDOWN = true
+			print(JUMP_COOLDOWN)
+			await get_tree().create_timer(JUMP_COOLDOWN).timeout
+			JUMP_ON_COOLDOWN = false
 
 	var direction := Input.get_axis("player_left", "player_right")
 	if direction:
