@@ -31,6 +31,7 @@ func _physics_process(_delta: float) -> void:
 	
 func _process(delta: float) -> void:
 	if player_in_radius and GameState.fallen_over and $AlertTimer.is_stopped():
+		SFX.play(SFX.Id.ALERT)
 		$AlertTimer.start()
 		$Alert.visible = true
 	
@@ -39,12 +40,16 @@ func _process(delta: float) -> void:
 		$Alert.visible = false
 	
 	if $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 4:
+		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.05)
 		$Alert.frame = 0
 	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 3:
+		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.1)
 		$Alert.frame = 1
 	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 2:
+		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.15)
 		$Alert.frame = 2
 	elif $AlertTimer.time_left >= ($AlertTimer.wait_time / 5.0) * 1:
+		SFX.play(SFX.Id.INCREMENT, false, 0.0, 0.2)
 		$Alert.frame = 3
 	elif $AlertTimer.time_left > ($AlertTimer.wait_time / 5.0) * 0:
 		$Alert.frame = 4
