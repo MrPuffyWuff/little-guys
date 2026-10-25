@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bxqgw63108gfi" path="res://assets/background/cars.png" id="7_n3o0a"]
 [ext_resource type="PackedScene" uid="uid://dy1yfa0qaa1l4" path="res://player/arm/arm.tscn" id="8_67ri8"]
 [ext_resource type="Texture2D" uid="uid://ctsdqwf3glplb" path="res://assets/background/theater_interior.png" id="8_n3o0a"]
+[ext_resource type="PackedScene" uid="uid://cmd0f1pheaf7l" path="res://player/camera/camera.tscn" id="10_piupu"]
 [ext_resource type="PackedScene" uid="uid://b1xxlba1j32r1" path="res://adult/adult.tscn" id="12_fwcvl"]
 [ext_resource type="Texture2D" uid="uid://c8dx0jpmywdvu" path="res://assets/background/entrance.png" id="15_s758e"]
 [ext_resource type="PackedScene" uid="uid://cfomnq5cwqhki" path="res://physics_item/physics_item.tscn" id="16_4hmqs"]
@@ -139,19 +140,20 @@ texture = ExtResource("8_n3o0a")
 position = Vector2(1812, -87)
 texture = ExtResource("4_na0o7")
 
+[node name="Arm" parent="." unique_id=730618851 node_paths=PackedStringArray("anchor") instance=ExtResource("8_67ri8")]
+position = Vector2(20, -38)
+anchor = NodePath("../Top")
+
 [node name="Top" parent="." unique_id=713894650 instance=ExtResource("2_xwkvk")]
 position = Vector2(20, -24)
 
-[node name="Camera2D" type="Camera2D" parent="Top" unique_id=481812765]
-position = Vector2(103, -67)
-zoom = Vector2(3, 3)
-limit_left = 0
-limit_top = -164
-limit_bottom = 14
-position_smoothing_enabled = true
-
 [node name="Bottom" parent="." unique_id=2082679845 instance=ExtResource("2_pjrb6")]
 position = Vector2(20, -8)
+
+[node name="Camera" parent="." unique_id=1277681669 node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("10_piupu")]
+position = Vector2(-80, -24)
+node_a = NodePath("../Top")
+node_b = NodePath("../Bottom")
 
 [node name="PlayerJoint" type="PinJoint2D" parent="." unique_id=1738142872]
 position = Vector2(20, -16)
@@ -165,10 +167,6 @@ position = Vector2(78, -88)
 
 [node name="KeyDoor" parent="." unique_id=1152561114 instance=ExtResource("6_kfbq2")]
 position = Vector2(1722, -10)
-
-[node name="Arm" parent="." unique_id=730618851 node_paths=PackedStringArray("anchor") instance=ExtResource("8_67ri8")]
-position = Vector2(20, -38)
-anchor = NodePath("../Top")
 
 [node name="Objects" type="Node" parent="." unique_id=594037012]
 

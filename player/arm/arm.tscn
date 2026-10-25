@@ -51,7 +51,13 @@ radius = 2.0
 [node name="Arm" type="RigidBody2D" unique_id=730618851]
 collision_layer = 4
 gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_li02e")
+
+[node name="ArmLine" type="Line2D" parent="." unique_id=1767760718]
+points = PackedVector2Array(0, 0, 20, 0)
+width = 2.0
+default_color = Color(0.31764707, 0.3019608, 0.2901961, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=843039218]
 sprite_frames = SubResource("SpriteFrames_7bva4")
