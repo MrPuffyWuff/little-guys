@@ -184,18 +184,22 @@ position = Vector2(65, -16)
 [node name="Item1" parent="Objects" unique_id=1911277811 instance=ExtResource("16_4hmqs")]
 position = Vector2(1363, -55)
 mass = 0.001
+metadata/is_floor = true
 
 [node name="Item2" parent="Objects" unique_id=1586724158 instance=ExtResource("16_4hmqs")]
 position = Vector2(1377, -66)
 mass = 0.001
+metadata/is_floor = true
 
 [node name="Item3" parent="Objects" unique_id=1879023760 instance=ExtResource("16_4hmqs")]
 position = Vector2(1390, -54)
 mass = 0.001
+metadata/is_floor = true
 
 [node name="Item4" parent="Objects" unique_id=437112448 instance=ExtResource("16_4hmqs")]
 position = Vector2(1380, -39)
 mass = 0.001
+metadata/is_floor = true
 
 [node name="ObjectCollisions" type="Node" parent="." unique_id=1031604052]
 
