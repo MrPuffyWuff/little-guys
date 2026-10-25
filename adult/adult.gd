@@ -16,14 +16,14 @@ var player_in_radius = false
 var alert_level = 0:
 	set(new_value):
 		print(alert_level)
-		alert_level = clampi(new_value, -1, 4)
+		alert_level = clampi(new_value, -1, 2)
 		if alert_level == -1:
 			$Alert.visible = false
 		else:
 			$Alert.visible = true
-			$Alert.frame = clampi(alert_level, 0, 4)
+			$Alert.frame = clampi(alert_level, 0, 2)
 		
-		if alert_level == 4:
+		if alert_level == 2:
 			get_tree().paused = true
 			SFX.play(SFX.Id.LOSE)
 			%Lose.visible = true

@@ -116,14 +116,6 @@ radius = 42.0
 atlas = ExtResource("7_c7xtk")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_53wvc"]
-atlas = ExtResource("7_c7xtk")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cyi5h"]
-atlas = ExtResource("7_c7xtk")
-region = Rect2(32, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_b530t"]
 atlas = ExtResource("7_c7xtk")
 region = Rect2(48, 0, 16, 16)
@@ -137,12 +129,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sqghr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_53wvc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cyi5h")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b530t")

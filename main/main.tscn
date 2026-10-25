@@ -22,8 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://cfomnq5cwqhki" path="res://physics_item/physics_item.tscn" id="16_4hmqs"]
 [ext_resource type="Texture2D" uid="uid://d04i87bpofkas" path="res://assets/items/ugly_hydrant.png" id="18_vapsy"]
 [ext_resource type="Script" uid="uid://cpws5t418iqyv" path="res://main/win_box.gd" id="19_q0sk7"]
-[ext_resource type="Texture2D" uid="uid://i42ik5sdxrop" path="res://assets/cutscenes/lose.png" id="23_re7it"]
+[ext_resource type="Texture2D" uid="uid://djpijdof7nqqx" path="res://assets/cutscenes/caughtscreen.png" id="23_n53tw"]
 [ext_resource type="Texture2D" uid="uid://oj5585n0uf4q" path="res://assets/background/jame_gam_arrow.png" id="24_oagth"]
+[ext_resource type="Texture2D" uid="uid://bac5uakf638hc" path="res://assets/adults/adult_ticketmaster.png" id="25_d00gp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
 texture = ExtResource("1_53q0u")
@@ -101,6 +102,28 @@ size = Vector2(8, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fngjv"]
 size = Vector2(80.5, 141.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8vpj"]
+atlas = ExtResource("25_d00gp")
+region = Rect2(0, 0, 16, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs5eo"]
+atlas = ExtResource("25_d00gp")
+region = Rect2(16, 0, 16, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7bva4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8vpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs5eo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Main" type="Node2D" unique_id=488679774]
 script = ExtResource("1_c651c")
@@ -351,9 +374,11 @@ texture = ExtResource("15_s758e")
 
 [node name="Lose" type="TextureRect" parent="CanvasLayer" unique_id=1495376406]
 unique_name_in_owner = true
+offset_left = -3.0
+offset_top = -5.0
 offset_right = 960.0
 offset_bottom = 540.0
-texture = ExtResource("23_re7it")
+texture = ExtResource("23_n53tw")
 expand_mode = 1
 
 [node name="JameGamArrow" type="Sprite2D" parent="." unique_id=1181389496]
@@ -364,5 +389,10 @@ texture = ExtResource("24_oagth")
 position = Vector2(1682.5, -18)
 scale = Vector2(0.890627, -0.87499994)
 texture = ExtResource("24_oagth")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1553014635]
+position = Vector2(937, -41)
+sprite_frames = SubResource("SpriteFrames_7bva4")
+autoplay = "default"
 
 [connection signal="body_entered" from="WinBox" to="WinBox" method="_on_body_entered"]
