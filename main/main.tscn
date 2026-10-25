@@ -77,6 +77,21 @@ size = Vector2(146, 31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsumw"]
 size = Vector2(104, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s758e"]
+size = Vector2(229, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hmqs"]
+size = Vector2(29, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piupu"]
+size = Vector2(27, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0sk7"]
+size = Vector2(83, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vapsy"]
+size = Vector2(33, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fngjv"]
 size = Vector2(80.5, 141.75)
 
@@ -206,6 +221,38 @@ shape = SubResource("RectangleShape2D_7bva4")
 position = Vector2(68, -24)
 shape = SubResource("RectangleShape2D_bsumw")
 
+[node name="FoodTable" type="StaticBody2D" parent="ObjectCollisions" unique_id=1625609962]
+position = Vector2(871, 1)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectCollisions/FoodTable" unique_id=1949518127]
+position = Vector2(424.5, -7.5)
+shape = SubResource("RectangleShape2D_s758e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ObjectCollisions/FoodTable" unique_id=1342235747]
+position = Vector2(336.5, -32.5)
+shape = SubResource("RectangleShape2D_4hmqs")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ObjectCollisions/FoodTable" unique_id=267515657]
+position = Vector2(460.5, -32.5)
+shape = SubResource("RectangleShape2D_piupu")
+
+[node name="SnackShelves" type="StaticBody2D" parent="ObjectCollisions" unique_id=1940577943]
+position = Vector2(871, 1)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectCollisions/SnackShelves" unique_id=30195619]
+position = Vector2(617.5, -4)
+shape = SubResource("RectangleShape2D_q0sk7")
+
+[node name="TicketsPlease" type="StaticBody2D" parent="ObjectCollisions" unique_id=2054492417]
+position = Vector2(871, 1)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectCollisions/TicketsPlease" unique_id=86908190]
+position = Vector2(756.5, -6)
+shape = SubResource("RectangleShape2D_vapsy")
+
 [node name="Adults" type="Node" parent="." unique_id=1997986492]
 
 [node name="Adult" parent="Adults" unique_id=1220137284 instance=ExtResource("12_fwcvl")]
@@ -218,5 +265,6 @@ position = Vector2(1793.75, -56.125)
 shape = SubResource("RectangleShape2D_fngjv")
 
 [node name="Entrance" type="Sprite2D" parent="." unique_id=1919220267]
+z_index = 1
 position = Vector2(947, -75)
 texture = ExtResource("15_s758e")
