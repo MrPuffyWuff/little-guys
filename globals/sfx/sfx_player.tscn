@@ -11,6 +11,7 @@
 [sub_resource type="Resource" id="Resource_blmy5"]
 script = ExtResource("2_3ny5u")
 stream = ExtResource("3_hfyi1")
+volume = -11.0
 metadata/_custom_type_script = "uid://c3d63fvkogmx2"
 
 [sub_resource type="Resource" id="Resource_67544"]
