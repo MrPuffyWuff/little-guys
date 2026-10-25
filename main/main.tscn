@@ -22,7 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://cfomnq5cwqhki" path="res://physics_item/physics_item.tscn" id="16_4hmqs"]
 [ext_resource type="Texture2D" uid="uid://d04i87bpofkas" path="res://assets/items/ugly_hydrant.png" id="18_vapsy"]
 [ext_resource type="Script" uid="uid://cpws5t418iqyv" path="res://main/win_box.gd" id="19_q0sk7"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://i42ik5sdxrop" path="res://assets/cutscenes/lose.png" id="23_re7it"]
+=======
+[ext_resource type="Texture2D" uid="uid://oj5585n0uf4q" path="res://assets/background/jame_gam_arrow.png" id="23_re7it"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjrb6"]
 texture = ExtResource("1_53q0u")
@@ -346,6 +350,7 @@ z_index = 1
 position = Vector2(947, -75)
 texture = ExtResource("15_s758e")
 
+<<<<<<< Updated upstream
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=623866809]
 
 [node name="Lose" type="TextureRect" parent="CanvasLayer" unique_id=1495376406]
@@ -354,5 +359,15 @@ offset_right = 960.0
 offset_bottom = 540.0
 texture = ExtResource("23_re7it")
 expand_mode = 1
+=======
+[node name="JameGamArrow" type="Sprite2D" parent="." unique_id=1562749939]
+position = Vector2(50, -85)
+texture = ExtResource("23_re7it")
+
+[node name="JameGamArrow2" type="Sprite2D" parent="." unique_id=624055534]
+position = Vector2(1679.5, -18)
+scale = Vector2(1.0781254, -1)
+texture = ExtResource("23_re7it")
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="WinBox" to="WinBox" method="_on_body_entered"]
