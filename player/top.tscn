@@ -3,6 +3,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://u46yrovq5xet" path="res://player/player_physics_mat.tres" id="1_3fbq4"]
 [ext_resource type="Script" uid="uid://cdjybkaqdeq1j" path="res://player/player.gd" id="1_h2khc"]
 [ext_resource type="Texture2D" uid="uid://cpmcptmvjvqyy" path="res://assets/mcs/MC_blue.png" id="3_3fbq4"]
+[ext_resource type="Texture2D" uid="uid://da6sp3fjf347f" path="res://assets/mcs/protag.png" id="4_0pyhn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pyhn"]
 atlas = ExtResource("3_3fbq4")
@@ -11,6 +12,14 @@ region = Rect2(0, 0, 17, 18)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg0a4"]
 atlas = ExtResource("3_3fbq4")
 region = Rect2(17, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8274"]
+atlas = ExtResource("4_0pyhn")
+region = Rect2(0, 18, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sra72"]
+atlas = ExtResource("4_0pyhn")
+region = Rect2(17, 18, 17, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7bva4"]
 animations = [{
@@ -23,6 +32,17 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8274")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sra72")
+}],
+"loop": 1,
+"name": &"worry",
 "speed": 2.0
 }]
 
@@ -43,6 +63,7 @@ script = ExtResource("1_h2khc")
 
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=1543623786]
 sprite_frames = SubResource("SpriteFrames_7bva4")
+animation = &"worry"
 autoplay = "default"
 offset = Vector2(0, -1)
 

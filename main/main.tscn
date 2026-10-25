@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ctsdqwf3glplb" path="res://assets/background/theater_interior.png" id="8_n3o0a"]
 [ext_resource type="PackedScene" uid="uid://cmd0f1pheaf7l" path="res://player/camera/camera.tscn" id="10_piupu"]
 [ext_resource type="PackedScene" uid="uid://b1xxlba1j32r1" path="res://adult/adult.tscn" id="12_fwcvl"]
+[ext_resource type="PackedScene" uid="uid://cjxyu835lmqcg" path="res://player/hat/hat.tscn" id="13_jofbb"]
 [ext_resource type="Texture2D" uid="uid://c8dx0jpmywdvu" path="res://assets/background/entrance.png" id="15_s758e"]
 [ext_resource type="PackedScene" uid="uid://cfomnq5cwqhki" path="res://physics_item/physics_item.tscn" id="16_4hmqs"]
 [ext_resource type="Texture2D" uid="uid://d04i87bpofkas" path="res://assets/items/ugly_hydrant.png" id="18_vapsy"]
@@ -155,10 +156,15 @@ position = Vector2(20, -24)
 [node name="Bottom" parent="." unique_id=2082679845 instance=ExtResource("2_pjrb6")]
 position = Vector2(20, -8)
 
-[node name="Camera" parent="." unique_id=1277681669 node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("10_piupu")]
-position = Vector2(-80, -24)
+[node name="Hat" parent="." unique_id=950475121 instance=ExtResource("13_jofbb")]
+position = Vector2(19, -36)
+
+[node name="HatJoint" type="GrooveJoint2D" parent="." unique_id=1475399098]
+position = Vector2(20, -36)
 node_a = NodePath("../Top")
-node_b = NodePath("../Bottom")
+node_b = NodePath("../Hat")
+length = 37.0
+initial_offset = 1.0
 
 [node name="PlayerJoint" type="PinJoint2D" parent="." unique_id=1738142872]
 position = Vector2(20, -16)
@@ -167,8 +173,13 @@ node_b = NodePath("../Bottom")
 bias = 0.9
 disable_collision = false
 
+[node name="Camera" parent="." unique_id=1277681669 node_paths=PackedStringArray("node_a", "node_b") instance=ExtResource("10_piupu")]
+position = Vector2(-80, -24)
+node_a = NodePath("../Top")
+node_b = NodePath("../Bottom")
+
 [node name="Key" parent="." unique_id=1090568882 instance=ExtResource("5_3wy1v")]
-position = Vector2(78, -88)
+position = Vector2(96, -84)
 
 [node name="KeyDoor" parent="." unique_id=1152561114 instance=ExtResource("6_kfbq2")]
 position = Vector2(1722, -10)
@@ -272,6 +283,7 @@ metadata/is_floor = true
 [node name="TicketsPlease" type="StaticBody2D" parent="ObjectCollisions" unique_id=2054492417]
 position = Vector2(871, 1)
 collision_mask = 0
+metadata/is_floor = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectCollisions/TicketsPlease" unique_id=86908190]
 position = Vector2(756.5, -6)

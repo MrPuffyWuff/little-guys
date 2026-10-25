@@ -31,6 +31,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	else:
 		$Body.rotation = lerp($Body.rotation, PI, state.step * 5.0)
 	
+	if GameState.top_player:
+		var angle : float = (GameState.top_player.position - GameState.bot_player.position).angle()
+		var offset : float = abs(-PI/2 - angle)
+		if offset > 0.5:
+			$Body.play("worry")
+		else:
+			$Body.play("default")
+	
 	if GameState.bot_player != self:
 		return
 	
@@ -44,4 +52,5 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		linear_velocity.x = SPEED * direction
 	else:
 		linear_velocity.x = move_toward(linear_velocity.x, 0, SPEED)
+	
 	#print(linear_velocity.x)
