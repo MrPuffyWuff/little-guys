@@ -2,6 +2,8 @@
 
 A submission to Hack Club's Jam Game
 
+Play [here](https://mrpuffywuff.itch.io/goofy-goobers)!
+
 ## Description:
 You and a friend are stacked on top of each other, passing as adults to break into a movie theater with your wizards hat. Don't fall over, or the adults will get suspicious, and make sure to grab your ticket to get into the theater room!
 
