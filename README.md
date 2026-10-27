@@ -9,6 +9,7 @@ You and a friend are stacked on top of each other, passing as adults to break in
 
 ## Controls:
 WASD / Arrow Keys / Space - Move / Jump
+
 Mouse - Move your hand
 
 ## Credits:
