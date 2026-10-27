@@ -13,18 +13,18 @@ Mouse - Move your hand
 
 ## Credits:
 ### Programmers
-MrPuffyWuff
-Theophylaktos
-fractured-sky
-falsevanityyy
+- MrPuffyWuff
+- Theophylaktos
+- fractured-sky
+- falsevanityyy
 
 ### Artists
-rota-fortunae
-SASHASAUCE
-shibz__
-MrPuffyWuff
-Theophylaktos
-falsevanityyy
+- rota-fortunae
+- SASHASAUCE
+- shibz__
+- MrPuffyWuff
+- Theophylaktos
+- falsevanityyy
 
 ### Music & SFX
-falsevanityyy
+- falsevanityyy
